@@ -1,0 +1,12 @@
+.app {
+    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Poppins', sans-serif; */
+    margin: 2rem;
+
+    & header {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: blueviolet;
+    }
+}
