@@ -1,6 +1,6 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [newTitle, setNewTitle] = useState("");
   const [newAmt, setNewAmt] = useState("");
   const [newDate, setNewDate] = useState("");
@@ -61,6 +61,7 @@ const ExpenseForm = () => {
       date: new Date(newDate),
     };
 
+    props.onSaveExpenseData(newExpenseData);
     // two-way binding
     setNewTitle("");
     setNewDate("");
