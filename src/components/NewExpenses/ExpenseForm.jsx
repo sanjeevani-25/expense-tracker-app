@@ -51,12 +51,27 @@ const ExpenseForm = () => {
   //       setNewAmt(value);
   //     }
   //   };
+
+  const submitHandler = (event) => {
+    // default js behanviour --> request is sent which reloads the page
+    event.preventDefault(); //this will prevent page reload
+    const newExpenseData = {
+      title: newTitle,
+      amount: newAmt,
+      date: new Date(newDate),
+    };
+
+    // two-way binding
+    setNewTitle("");
+    setNewDate("");
+    setNewAmt("");
+  };
   return (
-    <form action="">
+    <form onSubmit={submitHandler}>
       <div className="new-expense_controls">
         <div className="new-expense_ctrl">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input type="text" value={newTitle} onChange={titleChangeHandler} />
           {/* <input
             type="text"
             onChange={(event) =>
@@ -71,6 +86,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={newAmt}
           />
         </div>
         <div className="new-expense_ctrl">
@@ -80,6 +96,7 @@ const ExpenseForm = () => {
             type="date"
             min="2022-01-01"
             max="2025-12-31"
+            value={newDate}
           />
         </div>
         <div className="new-expense_action">
