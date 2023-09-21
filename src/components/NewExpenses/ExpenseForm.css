@@ -1,53 +1,26 @@
-/* Base styling for the form */
 .new-expense_controls {
-    margin: 2rem 0;
     display: flex;
+    /* flex-wrap: wrap; */
     flex-direction: column;
-    gap: 10px;
-    /* Spacing between each control */
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+    /* text-align: left; */
+}
 
-    & .new-expense_ctrl {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+.new-expense_ctrl label {
+    font-weight: bold;
+    margin: 0 1rem;
+    color: white;
+    /* display: block; */
+}
 
-        /* Spacing between label and input field */
-        & label {
-            flex-basis: 100px;
-            /* Ensures labels take up consistent width */
-            font-weight: bold;
-        }
+.new-expense_ctrl input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    width: 60%;
+    max-width: 100%;
+}
 
-        & input {
-            flex-grow: 1;
-            /* Allow input to take up remaining space */
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-    }
-
-    & .new-expense_action {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-
-        & button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        & button:hover {
-            background-color: #0056b3;
-        }
-    }
+.new-expense_action {
+    /* text-align: right; */
 }

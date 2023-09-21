@@ -1,10 +1,20 @@
 import "./NewExpense.css";
-import Form from "./ExpenseForm";
+import ExpenseForm from "./ExpenseForm";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+  // onSaveExpenseData --> is a prop which connects new data from ExpenseForm component to the expenses array in app.jsx via this NewExpense component --> parent child relationship
+
+  const saveExpenseDataHandler = (enteredData) => {
+    const expenseData = {
+      ...enteredData,
+      id: Math.random().toString(),
+    };
+    // lifting the state up
+    props.onAddExpense(expenseData);
+  };
   return (
-    <div>
-      <Form />
+    <div className='new-expense'>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };
