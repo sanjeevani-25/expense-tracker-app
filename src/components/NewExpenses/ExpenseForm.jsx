@@ -69,35 +69,37 @@ const ExpenseForm = (props) => {
   };
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-expense_controls">
-        <div className="new-expense_ctrl">
-          <label>Title</label>
-          <input type="text" value={newTitle} onChange={titleChangeHandler} />
-          {/* <input
+      <div className="frame">
+        <div className="new-expense_controls">
+          <div className="new-expense_ctrl">
+            <label>Title</label>
+            <input type="text" value={newTitle} onChange={titleChangeHandler} />
+            {/* <input
             type="text"
             onChange={(event) =>
               inputChangeHandler("title", event.target.value)
             }
           /> */}
-        </div>
-        <div className="new-expense_ctrl">
-          <label>Amount</label>
-          <input
-            onChange={amountChangeHandler}
-            type="number"
-            min="0.01"
-            step="0.01"
-            value={newAmt}
-          />
-        </div>
-        <div className="new-expense_ctrl">
-          <label>Date</label>
-          <input
-            onChange={dateChangeHandler}
-            type="date"
-            min="2022-01-01"
-            value={newDate}
-          />
+          </div>
+          <div className="new-expense_ctrl">
+            <label>Amount</label>
+            <input
+              onChange={amountChangeHandler}
+              type="number"
+              min="0.01"
+              step="0.01"
+              value={newAmt}
+            />
+          </div>
+          <div className="new-expense_ctrl">
+            <label>Date</label>
+            <input
+              onChange={dateChangeHandler}
+              type="date"
+              min="2022-01-01"
+              value={newDate}
+            />
+          </div>
         </div>
         <div className="new-expense_action">
           <button type="submit">Add Expense</button>
@@ -106,4 +108,6 @@ const ExpenseForm = (props) => {
     </form>
   );
 };
+
+
 export default ExpenseForm;

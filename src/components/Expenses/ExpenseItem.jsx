@@ -3,6 +3,7 @@ import { useState } from "react";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
+
 export default function ExpenseItem({ title, amt, date }) {
   const [currentTitle, setTitle] = useState(title);
   // console.log("start");
@@ -20,8 +21,7 @@ export default function ExpenseItem({ title, amt, date }) {
         <p>{currentTitle}</p>
         <div className="expense-item__price">{amt} Rs</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
+      {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
   );
 }
-// export default ExpenseItem;
